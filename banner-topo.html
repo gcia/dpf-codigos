@@ -1,0 +1,46 @@
+<!-- ANÚNCIO DPF -->
+<div class="container">
+    <div class="row">
+    	<div class="modal fade" id="oddsshark">
+        	<div class="modal-dialog">
+            	<div class="modal-content">
+                	<div class="modal-body">
+                    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    	<a href="http://bit.ly/banners_odds_shark" target="_blank"><img class="img-responsive" src="http://doentesporfutebol.com.br/wp-content/uploads/2017/02/600x300_OS-BR_Winners-Use.jpg" /></a>
+                	</div>
+               	<div class="modal-footer">
+                   	<div class="checkbox pull-right">
+                        	<label>
+                          	<input class="modal-check" name="modal-check" type="checkbox"> NÃO VISUALIZAR MAIS
+                        	</label>
+                    	</div>
+              	</div>
+            	</div>
+      	</div>
+    	</div>
+    </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	var my_cookie = $.cookie($('.modal-check').attr('name'));
+	if (my_cookie && my_cookie == "true") {
+    	$(this).prop('checked', my_cookie);
+    	console.log('checked checkbox');
+	}
+	else{
+    	$('#oddsshark').modal('show');
+    	console.log('uncheck checkbox');
+	}
+
+	$(".modal-check").change(function() {
+    	$.cookie($(this).attr("name"), $(this).prop('checked'), {
+        	path: '/',
+        	expires: 1
+    	});
+	});
+});
+   
+ 
+
+</script>
+<!-- FIM ANÚNCIO DPF →
